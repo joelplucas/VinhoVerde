@@ -11874,7 +11874,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11980,7 +11980,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>
@@ -12120,7 +12120,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="6.-Tunning-dos-par&#226;metros-e-Fun&#231;&#227;o-Custo">6. Tunning dos par&#226;metros e Fun&#231;&#227;o Custo<a class="anchor-link" href="#6.-Tunning-dos-par&#226;metros-e-Fun&#231;&#227;o-Custo">&#182;</a></h2><p>Ao analisar a acurácia atingida pelos dois algoritmos com várias combinações de parâmetros, observou-se que o algoritmo de RadomForest atingiu o melhor resultado (0.8104 x ). Portanto, tal algoritmo foi escolhido para construir o modelo de dados de qualidade do vinho. Para tanto, o algoritmo deve ser instanciado utilizando a melhor combinação de parâmetros devem alcançada no passo anterior:</p>
+<h2 id="6.-Fun&#231;&#227;o-Custo">6. Fun&#231;&#227;o Custo<a class="anchor-link" href="#6.-Fun&#231;&#227;o-Custo">&#182;</a></h2><p>Ao analisar a acurácia atingida pelos dois algoritmos com várias combinações de parâmetros, observou-se que o algoritmo de RadomForest atingiu o melhor resultado (0.8104 x ). Portanto, tal algoritmo foi escolhido para construir o modelo de dados de qualidade do vinho. Para tanto, o algoritmo deve ser instanciado utilizando a melhor combinação de parâmetros devem alcançada no passo anterior:</p>
 
 </div>
 </div>
@@ -12260,7 +12260,9 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[108]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">original_X_train</span><span class="p">,</span> <span class="n">original_label_train</span> <span class="o">=</span> <span class="n">divide_training_data</span><span class="p">(</span><span class="n">wine_data_original</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">kfold</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">original_X_train</span><span class="p">,</span> <span class="n">original_label_train</span> <span class="o">=</span> <span class="n">divide_training_data</span><span class="p">(</span><span class="n">wine_data_original</span><span class="p">)</span>
 <span class="n">original_results</span><span class="p">,</span> <span class="n">original_means</span><span class="p">,</span> <span class="n">original_std</span> <span class="o">=</span> <span class="n">check_model_accuracy</span><span class="p">(</span><span class="n">classifiers</span><span class="p">,</span> <span class="n">original_X_train</span><span class="p">,</span> <span class="n">original_label_train</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">original_means</span><span class="p">)</span>
