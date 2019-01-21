@@ -3,3 +3,5 @@
 .idea/
 data/winequality.csv
 __init__.py
+.ipynb_checkpoints/
+eda/.ipynb_checkpoints/
