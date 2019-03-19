@@ -1,17 +1,21 @@
-# Previsão da Qualidade de Vinhos portugueses
+# Wine Quality Prediction 
 
-Neste repositório encontra-se a implementação de um modelo para estimar a qualidade de vinho verde do Portugal. As soluções se encontram em um programa em Python (arquivo .py), para ser executado em forma de script, como também se encontram em notebooks implementados no Jupyter.
+This analysis was performed on the "Wine Quality Data Set" from UCI ( https://archive.ics.uci.edu/ml/datasets/wine+quality ).
 
-## Análise Exploratória dos Dados
-Dentro do diretório "eda" encontra-se a descrição e código fonte da análise exploratória realizada nos dados em questão, a qual foi implementada no arquivo "EDA.ipynb". Tal notebook pode ser visualizado, já processado, no arquivo "EDA.html". Para fazer tal análise, implementou-se, em "edautils.py", um conjunto de funções úteis para esta análise.
+This project implements a model that estimates Portuguese wines (red and white) quality. Such implementation can be run either through a Python program (.py file) as a script or through Jupyter notebooks.
 
-A limpeza dos dados, detecção de outliers e feature engineering foram realizados dentro da análise exploratória, onde o notebook responsável pela mesma ("eda/EDA.ipynb") gera um arquivo ("winequality_processed.csv") já processado e pronto para ser utilizado na definição do modelo.
 
-## Definição do Modelo
-O código fonte da implementação do modelo estimador da qualidade do vinho se encontra em "modelGenerator.py". Para gerar tal modelo, utilizou-se o notebook "WineQualityModeling.ipynb", o qual também está salvo em uma versão ".hmtl" dentro do mesmo diretório. Dentro de tal notebook se descrevem todos passos percorridos e conclusões atingidas para a definição deste modelo. 
+## Exploratory Data Analysis (EDA)
+The "eda" directory contains the description and the source code of the EDA made on this dataset, whose implementation is on the "EDA.ipynb" file. This notebook can also be visualised on the "EDA.html" file, where all its cells were already run. In order to perform this analysis, a set of useful functions were implemented within "edautils.py".
 
-Tal notebook carrega a amostra de dados já processada, no qual utliza-se validação cruzada (com k=10) para avaliar a precisão atingida nos dados de treino fornecidos. Inicialmente avaliaram-se 5 tipos de classificadores, implementados na biblioteca sklearn. Posteriormente, nos 2 algoritmos que apresentaram melhor score, ajustou-se seus parâmetros utilizando a implementação de GridSearch da mesma biblioteca. Foram combinados diversos valores de parâmetros em 5 iterações (k=5), nas quais, em cada uma, uma parte dos dados foi separada para ser o conjunto de teste.
+Data cleaning, outlier detection and feature engineering were performed along with the exploratory analisis. The "eda/EDA.ipynb" notebook is also responsible for generating a file  ("winequality_processed.csv") with the processed data, which is now able to be employed on the classification models.
 
-Em tal notebook também foi mencionado a função custo utilizada pelo algoritmo responsável por generalizar as características do conjunto de dados de treino. 
+## Model Definition
+The "modelGenerator.py" contains the source code of the model generated for estimating wine quality. The "WineQualityModeling.ipynb" notebook was implemented to generate such model, which is also saved on a ".html" version within the same directory. Such notebook shows all steps performed towards the model definition as well as the conclusions reached within the study.
 
-Para avaliar o modelo, além dos scores da validação cruzada executado no modelo final, traçou-se uma curva de aprendizagem para avaliar a generalização do modelo, observado-se que o mesmo não está sobre ajustado (overfitted). Por fim, comparou-se os scores de precisão atingidos pelo modelo final com os scores atingidos utilizando o conjunto dados originalmente disponibilizado pelo problema.
+This notebook is encharged for reading the processed dataset. After reading, cross validation (with k=10) is applied to evaluate the accuracy on the provided training dataset. Initially, 5 types of classifiers implementations from sklearn were evaluated. After that, sklearn's implementation
+of GridSearch was employed to adjust the parameters of the top 2 score classifiers. Within 5 iterations (k=5) several parameters values were combined, where each iteration a part of the data was separated to play the test set.
+
+The cost function employed by the algorithm responsible for generalizing the training dataset features was also described on this notebook. . 
+
+Besides the cross validation scores reached on the final model, a learning curve was draw to evaluate the model's generalization. This learning curve shows the model is not overfitted. Finally, the accuracy scores reached by the final model were compared against the scores reached using the original dataset (without performing any data processing).
